@@ -58,7 +58,7 @@ class Field{
       let playerX = x;
       let playerY = y;
 
-      if (userInput === "u"){
+      if (userInput === "u"){                                                   //input commands for player movement
         playerY -= 1;
     } else if (userInput === "d"){
         playerY += 1;
