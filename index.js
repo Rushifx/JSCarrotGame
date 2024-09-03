@@ -67,8 +67,16 @@ class Field{
     } else if (userInput === "r"){
         playerX += 1;
     };
+    /*  
+        end the game - set the gamePlay = false;
+        inform the user that he step OUT of the game
+        */
+        if (playerX < 0 || playerY < 0 || playerX >= this.field[0].length || playerY >= this.field.length){
+            console.log(OUT);
+            this.endGame();
+           };
     
-        /*   
+    /*   
         end the game - set gamePlay = false;
         inform the user that he WIN the game 
         */
@@ -85,15 +93,6 @@ class Field{
         */
        if (currentPos === HOLE){
         console.log(LOST);
-        this.endGame();
-       };
-
-        /*  
-        end the game - set the gamePlay = false;
-        inform the user that he step OUT of the game
-        */
-       if (playerX < 0 || playerY < 0 || playerX >= this.field[0].length || playerY >= this.field.length){
-        console.log(OUT);
         this.endGame();
        };
 
