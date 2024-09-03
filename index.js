@@ -169,8 +169,16 @@ class Field{
     }
 
     endGame(){                                                                  
-        this.gamePlay = false;                                                  // set property gamePlay to false
-        process.exit();
+        this.gamePlay = false; // set property gamePlay to false
+        const playAgain = prompt("Would you like to play again? (y/n): ").toLowerCase();
+        if (playAgain === 'y') {
+            const newField = Field.generateField(ROWS, COLS, PERCENT);
+            const newGame = new Field(newField);
+            newGame.startGame();
+        } else {
+            console.log("Thanks for playing!");
+            process.exit();
+        }
     }
 
     quitGame(){
